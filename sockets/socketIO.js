@@ -25,6 +25,9 @@ module.exports=(io)=>{
             else if(cmd.command==="right click"){
                 robotCommand.rightClick()
             }
+            else if(cmd.command==="right click"){
+                robotCommand.doubleClick()
+            }
         })
 
     })
