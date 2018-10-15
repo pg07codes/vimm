@@ -5,28 +5,44 @@ robot.setMouseDelay(1)
 
 module.exports={
     moveUp(val){
-        console.log("EXECUTING COMMAND: move up");
+        val=parseInt(val)
+        console.log("EXECUTING COMMAND: move up : "+val);
         let X=robot.getMousePos().x
         let Y=robot.getMousePos().y
+        console.log("INITIAL POS : ",X," , ",Y)
         robot.moveMouseSmooth(X,Y-val)
+        console.log("FINAL POS : ",robot.getMousePos().x," , ",robot.getMousePos().y)
+
     },
     moveDown(val){
-        console.log("EXECUTING COMMAND: move down");
+        val=parseInt(val)
+        console.log("EXECUTING COMMAND: move down : "+val);
         let X=robot.getMousePos().x
         let Y=robot.getMousePos().y
+        console.log("INITIAL POS : ",X," , ",Y)
         robot.moveMouseSmooth(X,Y+val)
+        console.log("FINAL POS : ",robot.getMousePos().x," , ",robot.getMousePos().y)
+
     },
     moveLeft(val){
-        console.log("EXECUTING COMMAND: move left");
+        val=parseInt(val)
+        console.log("EXECUTING COMMAND: move left : "+val);
         let X=robot.getMousePos().x
         let Y=robot.getMousePos().y
+        console.log("INITIAL POS : ",X," , ",Y)
         robot.moveMouseSmooth(X-val,Y)
+        console.log("FINAL POS : ",robot.getMousePos().x," , ",robot.getMousePos().y)
+
     },
     moveRight(val){
-        console.log("EXECUTING COMMAND: move right");
+        val=parseInt(val)
+        console.log("EXECUTING COMMAND: move right : "+val);
         let X=robot.getMousePos().x
         let Y=robot.getMousePos().y
+        console.log("INITIAL POS : ",X," , ",Y)
         robot.moveMouseSmooth(X+val,Y)
+        console.log("FINAL POS : ",robot.getMousePos().x," , ",robot.getMousePos().y)
+
     },
     click(){
         console.log("EXECUTING COMMAND: click");
