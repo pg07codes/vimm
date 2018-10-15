@@ -5,6 +5,7 @@
     <title>VIMM | Application</title>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/speechkitt.min.js"></script>-->
 </head>
 <body>
 
@@ -19,26 +20,32 @@
     if (annyang) {
         let commands = {
             'move up *val':function(val){
-
+                socket.emit('cmd',{command:'move up',value:val})
             },
             'move down *val':function(val){
-
+                socket.emit('cmd',{command:'move down',value:val})
             },
             'move left *val':function(val){
-
+                socket.emit('cmd',{command:'move left',value:val})
             },
             'move right *val':function(val){
-
+                socket.emit('cmd',{command:'move right',value:val})
             },
             'click':function(){
-
+                socket.emit('cmd',{command:'click',value:undefined})
             },
             'right click':function(){
-
+                socket.emit('cmd',{command:'right click',value:undefined})
             },
 
         }
 
+        // SpeechKITT.annyang()
+        //
+        // //stylesheet for KITT to use
+        // SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/1.0.0/themes/flat.css')
+        //
+        // SpeechKITT.render()
 
         // adding commands and starting annyang
         annyang.addCommands(commands)

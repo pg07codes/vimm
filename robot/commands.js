@@ -17,10 +17,10 @@ module.exports={
     moveRight(val){
 
     },
-    click(val){
+    click(){
 
     },
-    rightClick(val){
+    rightClick(){
 
     },
 
