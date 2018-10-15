@@ -59,7 +59,7 @@
 
         // adding commands and starting annyang
         annyang.addCommands(commands)
-        annyang.start()
+        annyang.start({ autoRestart: true })
     }
     else{
         console.log("ERROR: Annyang could not be started")
