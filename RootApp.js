@@ -6,7 +6,7 @@ const path = require("path")
 const app = express()
 const http=require('http').Server(app)
 const io=require("socket.io")(http)
-require("./socketIO")(io)
+require("./sockets/socketIO")(io)
 
 
 //serving files and parsing request body

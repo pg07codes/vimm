@@ -5,14 +5,49 @@
     <title>VIMM | Application</title>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
-
 </head>
 <body>
 
 <h1>live</h1>
 
 <script>
+    //socket initialized
     let socket=io()
 </script>
+
+<script>
+    if (annyang) {
+        let commands = {
+            'move up *val':function(val){
+
+            },
+            'move down *val':function(val){
+
+            },
+            'move left *val':function(val){
+
+            },
+            'move right *val':function(val){
+
+            },
+            'click':function(){
+
+            },
+            'right click':function(){
+
+            },
+
+        }
+
+
+        // adding commands and starting annyang
+        annyang.addCommands(commands)
+        annyang.start()
+    }
+    else{
+        console.log("ERROR: Annyang could not be started")
+    }
+</script>
+
 </body>
 </html>
