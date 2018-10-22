@@ -62,7 +62,16 @@
             'snapshot':function(){
                 console.log("SENDING COMMAND: snapshot");
                 socket.emit('cmd',{command:'snapshot',value:undefined})
-            }
+            },
+            'what colour':function(){
+                console.log("SENDING COMMAND: what colour :");
+                socket.emit('cmd',{command:'what color',value:undefined})
+            },
+            'what color':function(){
+                console.log("SENDING COMMAND: what color :");
+                socket.emit('cmd',{command:'what color',value:undefined})
+            },
+
 
         }
 

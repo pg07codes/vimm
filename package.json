@@ -20,6 +20,7 @@
   "dependencies": {
     "annyang": "^2.6.1",
     "express": "^4.16.4",
+    "hex-to-color-name": "^1.0.1",
     "robotjs": "^0.5.1",
     "socket.io": "^2.1.1"
   }
