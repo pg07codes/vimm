@@ -1,5 +1,6 @@
 /*created by Pranav Gupta (pg07codes) on 15-10-2018 */
-let robotCommand=require("../robot/commands")
+let mouseCommand=require("../robot/mouseCommands")
+let kbCommand=require("../robot/keyboardCommands")
 
 module.exports=(io)=>{
 
@@ -8,25 +9,31 @@ module.exports=(io)=>{
 
         socket.on('cmd',(cmd)=>{
             if(cmd.command==="move up"){
-                robotCommand.moveUp(cmd.value)
+                mouseCommand.moveUp(cmd.value)
             }
             else if(cmd.command==="move down"){
-                robotCommand.moveDown(cmd.value)
+                mouseCommand.moveDown(cmd.value)
             }
             else if(cmd.command==="move left"){
-                robotCommand.moveLeft(cmd.value)
+                mouseCommand.moveLeft(cmd.value)
             }
             else if(cmd.command==="move right"){
-                robotCommand.moveRight(cmd.value)
+                mouseCommand.moveRight(cmd.value)
             }
             else if(cmd.command==="click"){
-                robotCommand.click()
+                mouseCommand.click()
             }
             else if(cmd.command==="right click"){
-                robotCommand.rightClick()
+                mouseCommand.rightClick()
             }
             else if(cmd.command==="double click"){
-                robotCommand.doubleClick()
+                mouseCommand.doubleClick()
+            }
+            else if(cmd.command==="scroll up"){
+                mouseCommand.scrollUp(cmd.value)
+            }
+            else if(cmd.command==="scroll down"){
+                mouseCommand.scrollDown(cmd.value)
             }
         })
 

@@ -55,6 +55,14 @@ module.exports={
     doubleClick(){
         console.log("EXECUTING COMMAND: double click");
         robot.mouseClick('left',true)
+    },
+    scrollUp(val){
+        console.log("EXECUTING COMMAND: scroll up :"+val);
+        robot.scrollMouse(0,val);
+    },
+    scrollDown(val){
+        console.log("EXECUTING COMMAND: scroll down:"+val);
+        robot.scrollMouse(0,-val);
     }
 
 }

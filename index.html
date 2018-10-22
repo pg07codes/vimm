@@ -47,6 +47,14 @@
                 console.log("SENDING COMMAND: double click");
                 socket.emit('cmd',{command:'double click',value:undefined})
             },
+            'scroll up *val':function(val){
+                console.log("SENDING COMMAND: scroll up : "+val);
+                socket.emit('cmd',{command:'scroll up',value:val})
+            },
+            'scroll down *val':function(val){
+                console.log("SENDING COMMAND: scroll down: "+val);
+                socket.emit('cmd',{command:'scroll down',value:val})
+            },
 
         }
 
