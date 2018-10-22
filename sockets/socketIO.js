@@ -38,9 +38,9 @@ module.exports=(io)=>{
             else if(cmd.command==="type"){
                 kbCommand.type(cmd.value)
             }
-            else if(cmd.command==="snapshot"){
-                kbCommand.snapshot()
-            }
+            // else if(cmd.command==="snapshot"){
+            //     kbCommand.snapshot()
+            // }
             else if(cmd.command==="what color"){
                 mouseCommand.whatColor()
             }

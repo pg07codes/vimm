@@ -9,17 +9,17 @@ module.exports={
         console.log("EXECUTING COMMAND: type : "+str);
         robot.typeString(str+" ")
     },
-    // this is a keyboard shortcut and thus placed here
-    snapshot(){
-        console.log("EXECUTING COMMAND: snapshot ");
-        let imgData = robot.screen.capture()
-        let imgBuffer=imgData.image
-        console.log(imgBuffer)
-        fs.writeFile('C:\\Users\\iampr\\Desktop\\snapshot.png', imgBuffer, (err) => {
-            if (err) throw err;
-            console.log('The file has been saved!');
-        });
-    }
+    // this is a keyboard shortcut and thus placed here (not being used as of now)
+    // snapshot(){
+    //     console.log("EXECUTING COMMAND: snapshot ");
+    //     let imgData = robot.screen.capture()
+    //     let imgBuffer=imgData.image
+    //     console.log(imgBuffer)
+    //     fs.writeFile('C:\\Users\\iampr\\Desktop\\snapshot.png', imgBuffer, (err) => {
+    //         if (err) throw err;
+    //         console.log('The file has been saved!');
+    //     });
+    // }
 }
 
 

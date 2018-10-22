@@ -59,10 +59,10 @@
                 console.log("SENDING COMMAND: type : "+str);
                 socket.emit('cmd',{command:'type',value:str})
             },
-            'snapshot':function(){
-                console.log("SENDING COMMAND: snapshot");
-                socket.emit('cmd',{command:'snapshot',value:undefined})
-            },
+            // 'snapshot':function(){
+            //     console.log("SENDING COMMAND: snapshot");
+            //     socket.emit('cmd',{command:'snapshot',value:undefined})
+            // },
             'what colour':function(){
                 console.log("SENDING COMMAND: what colour :");
                 socket.emit('cmd',{command:'what color',value:undefined})
