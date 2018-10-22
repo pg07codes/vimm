@@ -35,6 +35,12 @@ module.exports=(io)=>{
             else if(cmd.command==="scroll down"){
                 mouseCommand.scrollDown(cmd.value)
             }
+            else if(cmd.command==="type"){
+                kbCommand.type(cmd.value)
+            }
+            else if(cmd.command==="snapshot"){
+                kbCommand.snapshot()
+            }
         })
 
     })

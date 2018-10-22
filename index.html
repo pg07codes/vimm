@@ -55,6 +55,14 @@
                 console.log("SENDING COMMAND: scroll down: "+val);
                 socket.emit('cmd',{command:'scroll down',value:val})
             },
+            'type *str':function(str){
+                console.log("SENDING COMMAND: type : "+str);
+                socket.emit('cmd',{command:'type',value:str})
+            },
+            'snapshot':function(){
+                console.log("SENDING COMMAND: snapshot");
+                socket.emit('cmd',{command:'snapshot',value:undefined})
+            }
 
         }
 
