@@ -2,6 +2,8 @@
 
 const robot=require("robotjs")
 robot.setMouseDelay(1)
+const color=require("hex-to-color-name")
+
 
 module.exports={
     moveUp(val){
@@ -63,6 +65,25 @@ module.exports={
     scrollDown(val){
         console.log("EXECUTING COMMAND: scroll down:"+val);
         robot.scrollMouse(0,-val);
+    },
+    whatColor(){
+        let X=robot.getMousePos().x
+        let Y=robot.getMousePos().y
+        console.log("EXECUTING COMMAND: what color : "+X+" "+Y);
+        let hex=robot.getPixelColor(X,Y)
+        let colorMap={
+            "white": "FFFFFF",
+            "black": "000000",
+            "red": "FF0000",
+            "green": "00FF00",
+            "blue": "0000FF",
+            "pink": "FF00FF",
+            "yellow": "FFFF00",
+            "teal": "00FFFF"
+        }
+        let c=color('#'+hex,colorMap)
+        console.log(c)
+       // return color
     }
 
 }
