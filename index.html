@@ -17,21 +17,23 @@
 </script>
 
 <script>
+
     if (annyang) {
         let commands = {
-            'move up *val':function(val){
+            //command word "move" changed to "go" as sound of word "move" is not distinguishable easily
+            'go up *val':function(val){
                 console.log("SENDING COMMAND: move up : "+val);
                 socket.emit('cmd',{command:'move up',value:val})
             },
-            'move down *val':function(val){
+            'go down *val':function(val){
                 console.log("SENDING COMMAND: move down : "+val);
                 socket.emit('cmd',{command:'move down',value:val})
             },
-            'move left *val':function(val){
+            'go left *val':function(val){
                 console.log("SENDING COMMAND: move left : "+val);
                 socket.emit('cmd',{command:'move left',value:val})
             },
-            'move right *val':function(val){
+            'go right *val':function(val){
                 console.log("SENDING COMMAND: move right : "+val);
                 socket.emit('cmd',{command:'move right',value:val})
             },
