@@ -18,22 +18,31 @@
 
 <script>
 
+    annyang.setLanguage('en-IN')
+    annyang.addCallback('result',function(POS_PHRASES){
+        console.log(POS_PHRASES)
+    })
+    setInterval(()=>{
+            console.log('SPEECH_RECOG_ON = '+annyang.isListening())
+    },5000)
+
     if (annyang) {
         let commands = {
-            //command word "move" changed to "go" as sound of word "move" is not distinguishable easily
-            'go up *val':function(val){
+            //command word "move" removed to make syntax minimal(only magnitude and direction is used now)
+            // <<EX: say it digit-wise (`one two one up` rather than `one twenty one(121) up` to be more accurate)>>)
+            ':val up':function(val){
                 console.log("SENDING COMMAND: move up : "+val);
                 socket.emit('cmd',{command:'move up',value:val})
             },
-            'go down *val':function(val){
+            ':val down':function(val){
                 console.log("SENDING COMMAND: move down : "+val);
                 socket.emit('cmd',{command:'move down',value:val})
             },
-            'go left *val':function(val){
+            ':val left':function(val){
                 console.log("SENDING COMMAND: move left : "+val);
                 socket.emit('cmd',{command:'move left',value:val})
             },
-            'go right *val':function(val){
+            ':val right':function(val){
                 console.log("SENDING COMMAND: move right : "+val);
                 socket.emit('cmd',{command:'move right',value:val})
             },
@@ -49,11 +58,11 @@
                 console.log("SENDING COMMAND: double click");
                 socket.emit('cmd',{command:'double click',value:undefined})
             },
-            'scroll up *val':function(val){
+            'scroll up :val':function(val){
                 console.log("SENDING COMMAND: scroll up : "+val);
                 socket.emit('cmd',{command:'scroll up',value:val})
             },
-            'scroll down *val':function(val){
+            'scroll down :val':function(val){
                 console.log("SENDING COMMAND: scroll down: "+val);
                 socket.emit('cmd',{command:'scroll down',value:val})
             },
@@ -73,7 +82,6 @@
                 console.log("SENDING COMMAND: what color :");
                 socket.emit('cmd',{command:'what color',value:undefined})
             },
-
 
         }
 
