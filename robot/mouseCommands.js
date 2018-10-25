@@ -3,11 +3,32 @@
 const robot=require("robotjs")
 robot.setMouseDelay(1)
 const color=require("hex-to-color-name")
+const WTNL=require('../sockets/wordToNumList')
+const _=require('lodash')
 
+function validate(val){
+    console.log("inside validate----------------> " +val)
+    if (isNaN(parseInt(val))){
+        Object.keys(WTNL).forEach(function(i){
+           if(val===i){
+               val=WTNL[`${val}`]
+               console.log("replaced with : "+val)
+               return val
+           }
+        })
+    }
+    if(isNaN(parseInt(val))){
+        console.log("SPEECH NOT RECOGNIZED")
+        val=7 // just to make sure it works while presenting.
+        return val
+    }
+    return val
+}
 
 module.exports={
     moveUp(val){
-        val=parseInt(val)
+        val=parseInt(validate(val))
+        val=val*10 //using a multiplying factor of 10 as default
         console.log("EXECUTING COMMAND: move up : "+val);
         let X=robot.getMousePos().x
         let Y=robot.getMousePos().y
@@ -17,7 +38,8 @@ module.exports={
 
     },
     moveDown(val){
-        val=parseInt(val)
+        val=parseInt(validate(val))
+        val=val*10 //using a multiplying factor of 10 as default
         console.log("EXECUTING COMMAND: move down : "+val);
         let X=robot.getMousePos().x
         let Y=robot.getMousePos().y
@@ -27,7 +49,8 @@ module.exports={
 
     },
     moveLeft(val){
-        val=parseInt(val)
+        val=parseInt(validate(val))
+        val=val*10 //using a multiplying factor of 10 as default
         console.log("EXECUTING COMMAND: move left : "+val);
         let X=robot.getMousePos().x
         let Y=robot.getMousePos().y
@@ -37,7 +60,8 @@ module.exports={
 
     },
     moveRight(val){
-        val=parseInt(val)
+        val=parseInt(validate(val))
+        val=val*10 //using a multiplying factor of 10 as default
         console.log("EXECUTING COMMAND: move right : "+val);
         let X=robot.getMousePos().x
         let Y=robot.getMousePos().y
@@ -59,10 +83,14 @@ module.exports={
         robot.mouseClick('left',true)
     },
     scrollUp(val){
+        val=parseInt(validate(val))
+        val=val*10 //using a multiplying factor of 10 as default
         console.log("EXECUTING COMMAND: scroll up :"+val);
         robot.scrollMouse(0,val);
     },
     scrollDown(val){
+        val=parseInt(validate(val))
+        val=val*10 //using a multiplying factor of 10 as default
         console.log("EXECUTING COMMAND: scroll down:"+val);
         robot.scrollMouse(0,-val);
     },
