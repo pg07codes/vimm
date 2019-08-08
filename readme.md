@@ -1,2 +1,4 @@
 # V.I.M.M.
-## a work in progress currently
+## voice initialised mouse movement
+- uses robotjs for OS stuff automation
+- uses browser as voice and text conversion source
