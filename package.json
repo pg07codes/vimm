@@ -23,6 +23,6 @@
     "hex-to-color-name": "^1.0.1",
     "lodash": "^4.17.11",
     "robotjs": "^0.5.1",
-    "socket.io": "^2.1.1"
+    "socket.io": "^2.4.0"
   }
 }
